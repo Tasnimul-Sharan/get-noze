@@ -1,9 +1,45 @@
 import React from "react";
 import logo from "../../images/logo.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const menuItems = (
+    <>
+      <li>
+        <Link className="text-violet-500" to="/">
+          Over View
+        </Link>
+      </li>
+      <li>
+        <Link className="text-violet-500" to="/spece">
+          Speces
+        </Link>
+      </li>
+      <li>
+        <Link className="text-violet-500" to="/blogs">
+          FAQs
+        </Link>
+      </li>
+      {/* {user && (
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
+          )}
+    
+          {user ? (
+            <button onClick={logOut} className="btn btn-active btn-ghost">
+              Logout
+            </button>
+          ) : (
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          )}
+          <li>{user && <p>{user.displayName}</p>}</li> */}
+    </>
+  );
   return (
-    <div class="navbar">
+    <div class="navbar sticky top-0">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -26,74 +62,19 @@ const Header = () => {
             tabindex="0"
             class="menu menu-compact dropdown-content mt-3 p-2 rounded-box w-52"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li tabindex="0">
-              <a class="justify-between">
-                Parent
-                <svg
-                  class="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                </svg>
-              </a>
-              <ul class="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {menuItems}
           </ul>
         </div>
-        <a class="btn btn-ghost normal-case text-xl">
+        <Link to="/" class="btn btn-ghost normal-case text-xl">
           <img src={logo} alt="" />
-        </a>
+        </Link>
       </div>
       <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal p-0">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li tabindex="0">
-            <a>
-              Parent
-              <svg
-                class="fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-              >
-                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-              </svg>
-            </a>
-            <ul class="p-2">
-              <li>
-                <a>Submenu 1</a>
-              </li>
-              <li>
-                <a>Submenu 2</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
-        </ul>
+        <ul class="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
-      <div class="navbar-end">
-        <a class="btn">Get started</a>
+      <div class="navbar-end mx-10">
+        <span className="mx-4 text-purple-500 text-xl">Order for $249</span>
+        <a class="btn btn-primary">Pre Order</a>
       </div>
     </div>
   );

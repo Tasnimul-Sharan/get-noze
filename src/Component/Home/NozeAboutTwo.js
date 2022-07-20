@@ -5,15 +5,21 @@ const NozeAboutTwo = () => {
   return (
     <div class="hero min-h-screen">
       <div class="hero-content flex-col lg:flex-row-reverse">
-        <video src={nazoabout} class="max-w-lg rounded-lg shadow-2xl" />
-        <div>
-          <h1 class="text-5xl font-bold">Box Office News!</h1>
-          <p class="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+        <video
+          src={nazoabout}
+          controls
+          autoPlay
+          muted
+          class="max-w-lg rounded-lg shadow-2xl"
+        />
+        <div className="text-justify">
+          <h1 class="text-5xl font-bold">Break the Mold</h1>
+          <p class="py-6 w-10/12">
+            NOZE monitors the air for spores and other markers associated with
+            the most common types of indoor mold. Our mold index will tell you
+            if it's likely that there’s mold around and whether your space is in
+            danger of being a breeding ground.
           </p>
-          <button class="btn btn-primary">Get Started</button>
         </div>
       </div>
     </div>
